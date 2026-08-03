@@ -13,6 +13,11 @@ dependencies {
     implementation(libs.kotlinx.coroutinesSwing)
 
     implementation(libs.compose.uiToolingPreview)
+
+
+    val ktorVersion = "3.5.1"
+    implementation("io.ktor:ktor-client-core:${ktorVersion}")
+    implementation("io.ktor:ktor-client-cio:${ktorVersion}")
 }
 
 compose.desktop {
