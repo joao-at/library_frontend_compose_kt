@@ -1,4 +1,4 @@
-package com.joaoat.library_frontend_compose_kt
+package com.joaoat.library_frontend_compose_kt.views
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -25,9 +25,10 @@ import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.joaoat.library_frontend_compose_kt.dtos.BookDTO
+import com.joaoat.library_frontend_compose_kt.view_models.BookViewModel
 
 @Composable
-fun BookGrid( books: List<BookDTO> ) {
+fun BookGrid( viewModel: BookViewModel = BookViewModel() ) {
 
     Box(
         modifier = Modifier
@@ -46,7 +47,7 @@ fun BookGrid( books: List<BookDTO> ) {
             .background(Color.Green),
 
         ) {
-            items(books) { book ->
+            items(viewModel.books) { book ->
                 Book(book)
             }
         }

@@ -15,6 +15,7 @@ dependencies {
     implementation(libs.kotlinx.coroutinesSwing)
 
     implementation(libs.compose.uiToolingPreview)
+    implementation(libs.androidx.lifecycle.viewmodel.desktop)
 
     // ktor connection
     val ktorVersion = "3.5.1"
