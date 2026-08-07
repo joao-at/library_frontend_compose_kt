@@ -9,16 +9,16 @@ import com.joaoat.library_frontend_compose_kt.dtos.BookDTO
 import com.joaoat.library_frontend_compose_kt.repositories.BookRepository
 import kotlinx.coroutines.launch
 
-class BookViewModel(val bookId: Long) : ViewModel() {
+class BookGridViewModel : ViewModel() {
 
     val bookRepository = BookRepository()
 
-    var book by mutableStateOf(BookDTO())
+    var books by mutableStateOf(listOf<BookDTO>())
         private set
 
     init {
         viewModelScope.launch {
-            book = bookRepository.getBook(bookId)
+           books = bookRepository.getAllBooks()
         }
     }
 }

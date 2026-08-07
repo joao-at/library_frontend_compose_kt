@@ -18,4 +18,14 @@ class BookRepository {
         }
     }
 
+    suspend fun getBook(id: Long): BookDTO {
+        val stringBody = connection.getBodyAsString("book/$id")
+
+        return try {
+            Json.decodeFromString(stringBody)
+        } catch (_: Exception) {
+            BookDTO()
+        }
+    }
+
 }

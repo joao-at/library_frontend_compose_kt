@@ -25,10 +25,10 @@ import androidx.compose.ui.unit.DpOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.joaoat.library_frontend_compose_kt.dtos.BookDTO
-import com.joaoat.library_frontend_compose_kt.view_models.BookViewModel
+import com.joaoat.library_frontend_compose_kt.view_models.BookGridViewModel
 
 @Composable
-fun BookGrid( viewModel: BookViewModel = BookViewModel() ) {
+fun BookGridView(viewModel: BookGridViewModel = BookGridViewModel() ) {
 
     Box(
         modifier = Modifier
@@ -37,7 +37,6 @@ fun BookGrid( viewModel: BookViewModel = BookViewModel() ) {
         contentAlignment = Alignment.Center
     ) {
         LazyVerticalGrid(
-
             columns = GridCells.FixedSize(500.dp),
             horizontalArrangement = Arrangement.Center,
             verticalArrangement = Arrangement.spacedBy(10.dp),
@@ -45,17 +44,16 @@ fun BookGrid( viewModel: BookViewModel = BookViewModel() ) {
                 .widthIn(max = 2000.dp)
                 .fillMaxHeight()
             .background(Color.Green),
-
         ) {
             items(viewModel.books) { book ->
-                Book(book)
+                BookGridItem(book)
             }
         }
     }
 }
 
 @Composable
-fun Book(book: BookDTO) {
+fun BookGridItem(book: BookDTO) {
 
     Column(
         modifier = Modifier

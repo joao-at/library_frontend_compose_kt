@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class BookDTO(
-    val id: Long,
-    val title: String,
-    val author: String,
+    val id: Long = -1,
+    val title: String = "error",
+    val author: String = "error",
 )

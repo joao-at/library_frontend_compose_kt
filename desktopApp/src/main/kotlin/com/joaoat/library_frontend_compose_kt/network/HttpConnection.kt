@@ -6,6 +6,7 @@ import io.ktor.client.plugins.defaultRequest
 import io.ktor.client.request.get
 import io.ktor.client.statement.bodyAsText
 
+// TODO: handle server error jsons
 object HttpConnection {
     val client = HttpClient(CIO) {
         defaultRequest {
